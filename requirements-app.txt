@@ -1,0 +1,4 @@
+# Optional local demo dependencies, resolved and verified on Python 3.12.10.
+-r requirements.txt
+-c configs/environment_constraints.txt
+gradio==6.30.0

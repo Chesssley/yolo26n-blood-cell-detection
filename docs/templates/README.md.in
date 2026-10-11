@@ -9,6 +9,7 @@ A lightweight and reproducible object-detection pipeline for RBC, WBC and platel
 - Strict validation/test isolation with validation-based model selection and a one-time final test.
 - Reproducible configurations, pinned sources, hashes and explicit data-loader guards.
 - Accuracy–efficiency benchmarking with synchronized GPU timing and repeated warmed measurements.
+- Lightweight Gradio demo for interactive RBC, WBC and Platelets detection.
 
 ## Final Test
 
@@ -86,6 +87,51 @@ python -m venv .venv
 Open [project_walkthrough.ipynb](notebooks/project_walkthrough.ipynb) for a model-free tour (`RUN_TRAINING=False`).
 Explicit new training and benchmark commands are in [experiments](docs/experiments.md).
 New reproduction outputs are separated from immutable published evidence. No automatic final-test rerun entry is distributed.
+
+## Interactive Demo
+
+The local Gradio demo illustrates detection on one uploaded JPG/JPEG/PNG microscopy image.
+Drag or upload an image, view the original, adjust **Confidence threshold** (0.05–0.95, default 0.25), then select **Detect**.
+The output shows bounding boxes, RBC/WBC/Platelets counts, total detections, local inference time in milliseconds and CPU/CUDA device.
+**Clear** restores the initial form. Zero detections returns zero counts normally.
+
+Install into this repository's own `.venv` after the environment setup above:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-app.txt
+.\.venv\Scripts\python.exe app\app.py
+```
+
+Provide the original validation-selected **E2 best.pt** separately; weights are not included in Git.
+The default location is `outputs/experiments/e2_class_weight_640/weights/best.pt`, matching the original frozen run.
+Weight resolution is `--weights` → `BLOOD_CELL_WEIGHTS` → the default path. Relative paths resolve from this repository root.
+For a checkpoint stored elsewhere:
+
+```powershell
+.\.venv\Scripts\python.exe app\app.py --weights "path\to\best.pt"
+# Alternative: set a process-scoped path before launching
+$env:BLOOD_CELL_WEIGHTS = "path\to\best.pt"
+.\.venv\Scripts\python.exe -m app.app
+```
+
+Open the localhost URL printed in the terminal (normally `http://127.0.0.1:7860`).
+The app verifies the checkpoint SHA-256 against frozen evidence and checks `0: RBC`, `1: WBC`, `2: Platelets`.
+It uses `imgsz=640`, loads the model lazily on first Detect, and reuses it for subsequent requests.
+CUDA is selected when available; otherwise inference uses CPU. Missing weights produce a concise error; nothing is downloaded or trained automatically.
+Fresh reproduction checkpoints are not substituted for the frozen E2 model.
+
+The displayed time includes server-side image decoding, first-use model loading, prediction and box drawing;
+it excludes browser upload/display and queue waiting. It is a per-request demo measurement, not the published efficiency benchmark.
+Uploads and rendered images may remain temporarily in ignored `.cache/gradio/`; the demo listens on localhost with public sharing disabled.
+This app does not train models, evaluate a dataset split, rerun the final test or modify published evidence.
+
+**Research / educational demonstration only. Not for clinical diagnosis, medical decision-making, or treatment.**
+
+To check error handling and UI wiring without model inference:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
 
 ## Limitations
 

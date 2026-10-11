@@ -1,0 +1,14 @@
+# AI usage log
+
+## Stage 11 — 2026-10-11
+
+- User authorized a lightweight Gradio demo, generated README update, necessary validation, isolated feature branch/commit and PR to main; no merge or experiment rerun. The user subsequently approved using the public companion repository because the course-source checkout lacks the public README renderer/template and Git remote.
+- Codex inspected applicable instructions, Git status/history/remotes, README/template, renderer, trainer, E2 configuration, ignore rules, requirements/constraints and source/script structure. The course-source repository and its two pre-existing untracked teacher DOCX files were preserved.
+- Created the public repository's independent CPython 3.12.10 `.venv`; pip resolved original pinned ML requirements plus Gradio, reused supported D: pip caches, and installed exact resolver artifact URLs with SHA-256 checks. Gradio 6.30.0 was fixed in a separate App requirements file. No original dependency/evidence files changed.
+- Added three App files with lazy E2 loading, weight overrides, frozen checkpoint SHA/task/class verification, single-image prediction at imgsz=640, RGB plotting, counts, timed requests, CPU/CUDA selection and concise errors. Added upload/preview/confidence/Detect/Clear UI, visible research-only medical disclaimer, local caches, offline/no-auto-install settings and localhost-only launch.
+- Edited the README template, generated README with `scripts/render_results.py`, and ran `--verify`. No manual modification of rendered metric tables.
+- Executed syntax/import/CLI/requirements/pip checks, 11 synthetic/mocked unit tests and actual browser checks. Fixed the discovered Ultralytics HEIF decoding fallback and a Clear/change-event status interaction, then verified the repaired paths. Windows Gradio unit construction emitted dependency ResourceWarnings; these are disclosed, not suppressed.
+- Per user permission, exactly one real ordinary train-image inference used the existing E2 checkpoint read-only: BloodImage_00001.jpg, conf=0.25, RBC=34/WBC=1/Platelets=0/total=35, CUDA, first-request local time=3113.11 ms. Browser boxes and RGB image inspected; screenshot kept in ignored cache only. This does not measure accuracy or replace frozen benchmark results.
+- Rechecked 1,571 course-source file hashes for raw/processed data, split files, final-test outputs and E2 checkpoint, plus published evidence/configuration hashes through the renderer. No training, dataset validation evaluation, final-test rerun, changed model selection, changed metrics or changed conclusions.
+- Reviewed diff, explicit staged filenames, whitespace, local-path/secret/artifact exclusions before commit and PR. Human PR review remains pending; automated verification and Codex visual inspection are not student/manual approval.
+- Full check results and limits: [STAGE11_REPORT.md](STAGE11_REPORT.md).
