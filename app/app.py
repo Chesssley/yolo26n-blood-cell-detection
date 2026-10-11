@@ -74,7 +74,10 @@ def build_demo(detector):
         outputs = [annotated, rbc, wbc, platelets, total, latency, device, status]
         event = detect.click(lambda image, conf: detect_image(detector, image, conf),
                              [upload, confidence], outputs, concurrency_limit=1, api_name="detect")
-        upload.change(preview_image, upload, [original, *outputs], api_name=False)
+        # Cancel delivery of old results when the displayed input changes.
+        # An in-flight synchronous prediction may finish, but cannot update the UI.
+        upload.change(preview_image, upload, [original, *outputs],
+                      cancels=[event], api_name=False)
         clear.click(clear_inputs, outputs=[upload, original, confidence, *outputs],
                     cancels=[event], api_name=False)
     return demo
