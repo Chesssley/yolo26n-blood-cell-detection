@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "origin_artifact_sha256": {
+    "experiment_e1_metrics": "b2330ecfb29515c5de45555d40962484aa0cbf2e72497b30af8d6f1da42ab8fc",
+    "experiment_e2_metrics": "8c169a7816b368b819145becb903a18811ae37c28dc8abab3e16dfeab1b11877",
+    "experiment_e3_metrics": "b36afb6e3f72cfb55470b6706ca3c4433d091337621868be47d606a54def8411",
+    "final_test_metrics": "3e5e863b939ee79a248bc9e8f14ed665d8656f8c7a212e19745c3812c21b21a0",
+    "dataset_conversion": "af7744f440a3ad8f3a623d2e3a2e194392a5f0f7f07aa02e74922de46b4c18de",
+    "efficiency_benchmark": "4adeae2546546ea7d87037c32b73333723fcfe3ed5195be42ec2cce003e09c73"
+  },
+  "public_sha256": {
+    "docs/evidence/frozen_results.json": "9a6acaacb6976dc08dd86422ff7a3a973f9f4455240dc418750225d69dd2a5b2",
+    "docs/evidence/LICENSE_BCCD.txt": "e2b611c8f321cb03c8d1b378a343ef488b623cf714c48bee814f04fcf8ba26df",
+    "docs/evidence/near_duplicate_candidates.csv": "4933b67cb3cb72d9856e4ee6317dde32cda2b20d70fed03f977d7070fcba7f4b",
+    "docs/evidence/near_duplicate_scan.json": "35cc4b3b0e31a7cba44a125cff32f2dab05564752acdf4f0b69cd7777ac9a21a",
+    "docs/evidence/provenance.json": "b055060dd6097cbf75677907f928d7504e6c52f18c20280832e5ca0fa78d8387",
+    "docs/evidence/raw_manifest.json": "9464034d093b069220827951eb5d65e7c9bb01e10b1c9cd27e2fd36979d92531",
+    "docs/assets/final_test_confusion_matrix.png": "9ef8cd832ad28da4722ae971910ee3279eb59c6c502c0a92aa02be309400259d",
+    "docs/assets/per_class_map5095.png": "2124ec4a3846498976309be2653a8f4da88556466d9f4a6c03704cc4fc38d9f9",
+    "docs/assets/prediction_good.png": "d4e6f9f983fd2e4355c89db777f7f698e84e9074796d1cb70216d77201e7f91e",
+    "docs/assets/prediction_high_fn.png": "d3f4b884bc7da9650f5259c12b4bbdd6f3ab0de11f981e55af1f0cefc9c3d750",
+    "docs/assets/prediction_high_fp.png": "99afcbf751e3a321a244ee76f6db0d8828327d0a48c80cc6fc51e74df55fdf9c",
+    "docs/assets/resolution_resource_comparison.png": "bf0e4e9cc8247d1f62d2ef87882acdf7d7f3a5f1dc3b022df8157beb34b88893",
+    "docs/assets/validation_experiment_comparison.png": "26b762cbe739aaf2935df59fee883214f7d1268869c48c1abaa849fe6ef14324",
+    "configs/annotation_corrections.yaml": "0529b0c957fbc3e6b41185eeb36e83ebd118b5d02f80a1b2a9838dd208df714f",
+    "configs/bccd.yaml": "00fbe050a8ce3cbdaed7d4be701ff8f59567dc74892cf690c1dc272a7fc8204f",
+    "configs/environment_constraints.txt": "cfeee4cc7eb4fa869e1a089ad8eb5441dc286ea6a8d561dade151670b4154641",
+    "configs/experiments/e1_baseline_640.yaml": "526e6ae3d53ce4f58e87449f7236d7d7b56826403b8be7b375adcb54812a68d3",
+    "configs/experiments/e2_class_weight_640.yaml": "de1e7d59b07cedf60cf74c525358e443299c008a92eb764165f3bb7d2aea71c5",
+    "configs/experiments/e3_class_weight_512.yaml": "d2da3146107aaea08add8b02cbc31d9333c5347d6bbd4189e0562d34315b0a85",
+    "configs/near_duplicate_groups.yaml": "89d8fc895a668264beda4e435318fc4041c50108c112c67e0ac3fd2890c0815a",
+    "configs/resolved/e1.yaml": "77560a7928dde82622d605e43f5df667a80f478df71484a15d84d8a12433e25e",
+    "configs/resolved/e2.yaml": "0e2b34f607bf0219909308c33c45ee8c49c2307dc67701e316603260dd82991c",
+    "configs/resolved/e3.yaml": "be04c61446ccfaff4bd8d555c5c07f1ec9fe64f6c1ef3066a1d0fc280977d290",
+    "configs/split_corrections.yaml": "b7f6e81b21b84b64d487dcbbbfb09e4ef82d5cb43eeb7f53304ae12b1e025926",
+    "configs/splits/split_manifest.json": "5af798d78dc6250f3e21e4866210ab35e51ad92f58a3ddfadaba81d20b03dd9d",
+    "configs/splits/test.txt": "9cadeca2bb1d186b22b27c56b14c95e46c4c44d0fbc7a918bf96af9fb5064742",
+    "configs/splits/train.txt": "1ff58c3ab27aaf8585eb486522108fdb392623556968e69a79df10d129d6c428",
+    "configs/splits/val.txt": "20964d6b86052e1330140d4fa81f73b516db8eff555404af4fa72687e6fafba6"
+  },
+  "note": "Frozen measured extracts; encoded image data and pixels identical, ancillary text metadata removed; no model execution",
+  "figure_source_sha256": {
+    "validation_experiment_comparison.png": "19bfa65f7fd2fcac70be8156f99f0d1d314fd90b7267d509298b2550a665ad01",
+    "per_class_map5095.png": "6dcc77ac3861d181c6c665da705259a288745782faf8d7f1eac9f0554e571695",
+    "resolution_resource_comparison.png": "55489c40313c92f1464740944de529747a199edede493f40422971d110db1d99",
+    "final_test_confusion_matrix.png": "9522c9d28a954463afc448b5c32f8a5ad484a092fdb1f6648c68690af7feb2be",
+    "prediction_good.png": "b88ed32066bd31797193e990d7b0657ba777c06eb2c2643739c45cab871eb7c1",
+    "prediction_high_fn.png": "dd1366f6adcff245a74a965fb1445151abbe8a1e654a15f89d9f13a468840d3f",
+    "prediction_high_fp.png": "9868521c5bf256d03a16b46c9c17b34824cc3486e543dc287a94f4ce1e2545b3"
+  }
+}

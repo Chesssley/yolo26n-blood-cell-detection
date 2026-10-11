@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/Shenggan/BCCD_Dataset",
+  "upstream_commit": "d272fb14cdff6e473fafeeeba32aba5f560e9e43",
+  "license": "MIT",
+  "archive_url": "https://codeload.github.com/Shenggan/BCCD_Dataset/zip/d272fb14cdff6e473fafeeeba32aba5f560e9e43",
+  "archive_sha256": "e2ed144a0a2c6dbe351f3ddb09fb8ff2c9ad4f947bdf42b6a52dd4f38a996ba9",
+  "license_sha256": "e2b611c8f321cb03c8d1b378a343ef488b623cf714c48bee814f04fcf8ba26df",
+  "pretrained_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt",
+  "pretrained_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+}

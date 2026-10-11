@@ -1,0 +1,29 @@
+version: 1
+upstream_commit: d272fb14cdff6e473fafeeeba32aba5f560e9e43
+raw_policy: preserve_upstream_bytes
+corrections:
+- image_id: BloodImage_00338
+  class: RBC
+  original_bbox:
+  - 504
+  - 337
+  - 504
+  - 337
+  issue_type: zero_area_bbox
+  action: drop_invalid_zero_area_bbox
+  reason: No positive-area detection box can be formed; retain image and all other
+    objects without guessing coordinates.
+  discovery: Pinned-source annotation geometry audit
+  reference: https://github.com/Shenggan/BCCD_Dataset/issues/11
+- image_id: BloodImage_00343
+  class: RBC
+  original_bbox:
+  - 181
+  - 329
+  - 181
+  - 329
+  issue_type: zero_area_bbox
+  action: drop_invalid_zero_area_bbox
+  reason: No positive-area detection box can be formed; retain image and all other
+    objects without guessing coordinates.
+  discovery: Pinned-source annotation geometry audit

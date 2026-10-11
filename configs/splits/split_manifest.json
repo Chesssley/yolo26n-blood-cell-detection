@@ -1,0 +1,17 @@
+{
+  "corrected_split_hashes": {
+    "train": "1ff58c3ab27aaf8585eb486522108fdb392623556968e69a79df10d129d6c428",
+    "val": "20964d6b86052e1330140d4fa81f73b516db8eff555404af4fa72687e6fafba6",
+    "test": "9cadeca2bb1d186b22b27c56b14c95e46c4c44d0fbc7a918bf96af9fb5064742"
+  },
+  "image_counts": {
+    "train": 206,
+    "val": 86,
+    "test": 72
+  },
+  "config_sha256": {
+    "configs/annotation_corrections.yaml": "0529b0c957fbc3e6b41185eeb36e83ebd118b5d02f80a1b2a9838dd208df714f",
+    "configs/near_duplicate_groups.yaml": "89d8fc895a668264beda4e435318fc4041c50108c112c67e0ac3fd2890c0815a",
+    "configs/split_corrections.yaml": "b7f6e81b21b84b64d487dcbbbfb09e4ef82d5cb43eeb7f53304ae12b1e025926"
+  }
+}

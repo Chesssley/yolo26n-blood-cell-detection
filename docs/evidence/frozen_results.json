@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "dataset": {
+    "images": 364,
+    "raw_objects": 4888,
+    "modeling_objects": 4886,
+    "raw_counts": {
+      "RBC": 4155,
+      "WBC": 372,
+      "Platelets": 361
+    },
+    "modeling_counts": {
+      "RBC": 4153,
+      "WBC": 372,
+      "Platelets": 361
+    },
+    "round_trip": 2.4004975784919225e-10,
+    "commit": "d272fb14cdff6e473fafeeeba32aba5f560e9e43",
+    "splits": {
+      "train": 206,
+      "val": 86,
+      "test": 72
+    },
+    "split_classes": {
+      "train": {
+        "WBC": 215,
+        "RBC": 2408,
+        "Platelets": 211
+      },
+      "val": {
+        "WBC": 86,
+        "RBC": 940,
+        "Platelets": 81
+      },
+      "test": {
+        "WBC": 71,
+        "RBC": 805,
+        "Platelets": 69
+      }
+    }
+  },
+  "test": {
+    "overall": {
+      "Precision": 0.8275572120962676,
+      "Recall": 0.9049361991390977,
+      "mAP50": 0.9155664562041315,
+      "mAP50-95": 0.6176148340263355
+    },
+    "per_class": {
+      "RBC": {
+        "precision": 0.7453281156012883,
+        "recall": 0.8507198710097261,
+        "map50": 0.8755376026030945,
+        "map50_95": 0.6215212856108328
+      },
+      "WBC": {
+        "precision": 0.9048972246261952,
+        "recall": 1.0,
+        "map50": 0.9720874065554918,
+        "map50_95": 0.7730205229761977
+      },
+      "Platelets": {
+        "precision": 0.8324462960613196,
+        "recall": 0.864088726407567,
+        "map50": 0.8990743594538083,
+        "map50_95": 0.45830269349197617
+      }
+    },
+    "map75": 0.7077147352197879,
+    "checkpoint_sha256": "a732185a984047ddf5f5ede934441821442a3765c0916ba08bc434e2bd131b02",
+    "images_evaluated": 72,
+    "test_objects": 945,
+    "model_test_evaluation_calls": 1
+  },
+  "class_weights": {
+    "cls_pw": 0.5,
+    "train_counts": {
+      "RBC": 2408,
+      "WBC": 215,
+      "Platelets": 211
+    },
+    "normalized_weights": {
+      "RBC": 0.38835686445236206,
+      "WBC": 1.2996907234191895,
+      "Platelets": 1.3119523525238037
+    },
+    "source": "trainer.model.class_weights; NOT manually predicted weights",
+    "counts_source": "trainer.get_class_counts() from actual train_loader.dataset.labels; reconciled with current labels",
+    "capture_point": "on_pretrain_routine_end, before first batch",
+    "dtype": "float32",
+    "mean": 1.0,
+    "checks": {
+      "positive": true,
+      "mean_one": true,
+      "minority_weights_above_rbc": true,
+      "inverse_frequency_formula_matches": true
+    },
+    "loss_state_verified": true,
+    "loss_capture_point": "first on_train_batch_end",
+    "actual_loss_criteria": [
+      {
+        "criterion": "v8DetectionLoss",
+        "weights": [
+          0.38835686445236206,
+          1.2996907234191895,
+          1.3119523525238037
+        ]
+      },
+      {
+        "criterion": "v8DetectionLoss",
+        "weights": [
+          0.38835686445236206,
+          1.2996907234191895,
+          1.3119523525238037
+        ]
+      }
+    ]
+  },
+  "environment": {
+    "OS": "Windows",
+    "Python": "3.12.10",
+    "PyTorch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "Ultralytics": "8.4.175",
+    "GPU": "RTX 4070 SUPER",
+    "CUDA runtime": "12.8"
+  },
+  "augmentation": {
+    "hsv_h": 0.015,
+    "hsv_s": 0.7,
+    "hsv_v": 0.4,
+    "degrees": 0.0,
+    "translate": 0.1,
+    "scale": 0.5,
+    "shear": 0.0,
+    "perspective": 0.0,
+    "flipud": 0.0,
+    "fliplr": 0.5,
+    "mosaic": 1.0,
+    "close_mosaic": 10,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "copy_paste": 0.0
+  },
+  "pretrained_sha": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "efficiency": [
+    {
+      "metric": "avg train+val time",
+      "E2": "3.0851630840579936",
+      "E3": "2.6517911866666055",
+      "delta": "-0.43337189739138804",
+      "percent_change": "-14.046968850066843",
+      "unit": "s/epoch",
+      "scope": "historical single training"
+    },
+    {
+      "metric": "training peak allocated VRAM",
+      "E2": "2.4760055541992188",
+      "E3": "1.6006789207458496",
+      "delta": "-0.8753266334533691",
+      "percent_change": "-35.35236954411697",
+      "unit": "GiB",
+      "scope": "historical single training"
+    },
+    {
+      "metric": "training peak reserved VRAM",
+      "E2": "2.7421875",
+      "E3": "1.7421875",
+      "delta": "-1.0",
+      "percent_change": "-36.46723646723646",
+      "unit": "GiB",
+      "scope": "historical single training"
+    },
+    {
+      "metric": "median pipeline latency",
+      "E2": "2.6758813953461487",
+      "E3": "2.3673046511629403",
+      "delta": "-0.30857674418320835",
+      "percent_change": "-11.53177957438174",
+      "unit": "ms/image",
+      "scope": "controlled warmed batch16 FP16 pipeline"
+    },
+    {
+      "metric": "median throughput",
+      "E2": "373.70864110015657",
+      "E3": "422.4213387612571",
+      "delta": "48.71269766110055",
+      "percent_change": "13.034940138846075",
+      "unit": "images/s",
+      "scope": "controlled warmed batch16 FP16 pipeline"
+    }
+  ],
+  "errors": [
+    {
+      "domain": "Overall",
+      "TP": "876",
+      "FP": "440",
+      "FN": "69",
+      "confidence": "0.25",
+      "matching_iou": "0.5",
+      "matching": "same-class descending IoU greedy one-to-one"
+    },
+    {
+      "domain": "RBC",
+      "TP": "741",
+      "FP": "411",
+      "FN": "64",
+      "confidence": "0.25",
+      "matching_iou": "0.5",
+      "matching": "same-class descending IoU greedy one-to-one"
+    },
+    {
+      "domain": "WBC",
+      "TP": "71",
+      "FP": "8",
+      "FN": "0",
+      "confidence": "0.25",
+      "matching_iou": "0.5",
+      "matching": "same-class descending IoU greedy one-to-one"
+    },
+    {
+      "domain": "Platelets",
+      "TP": "64",
+      "FP": "21",
+      "FN": "5",
+      "confidence": "0.25",
+      "matching_iou": "0.5",
+      "matching": "same-class descending IoU greedy one-to-one"
+    }
+  ],
+  "experiments": {
+    "E1": {
+      "config": {
+        "model": "weights/pretrained/yolo26n.pt",
+        "data": "configs/bccd.yaml",
+        "epochs": 100,
+        "imgsz": 640,
+        "batch": 16,
+        "device": 0,
+        "seed": 42,
+        "deterministic": true,
+        "amp": true,
+        "patience": 20,
+        "cache": false,
+        "workers": 0,
+        "plots": true,
+        "save": true,
+        "optimizer": "auto",
+        "cls_pw": 0.0,
+        "project": "outputs/experiments",
+        "name": "e1_baseline_640",
+        "exist_ok": false
+      },
+      "overall": {
+        "Precision": 0.825266506186825,
+        "Recall": 0.91444707118466,
+        "mAP50": 0.9198681204181794,
+        "mAP50-95": 0.6362180896038726
+      },
+      "per_class": {
+        "RBC": {
+          "precision": 0.7434719735499437,
+          "recall": 0.8914893617021277,
+          "map50": 0.892762991610604,
+          "map50_95": 0.627479352421285
+        },
+        "WBC": {
+          "precision": 0.9811519188349052,
+          "recall": 1.0,
+          "map50": 0.9905172413793102,
+          "map50_95": 0.8120711932497204
+        },
+        "Platelets": {
+          "precision": 0.7511756261756262,
+          "recall": 0.8518518518518519,
+          "map50": 0.876324128264624,
+          "map50_95": 0.46910372314061244
+        }
+      },
+      "training": {
+        "actual_epochs": 49,
+        "best_epoch": 29,
+        "wall_seconds": 161.04607440000018,
+        "seconds_per_epoch_train_val_mean": 3.1696974428571276,
+        "peak_vram": {
+          "allocated_bytes": 2658590208,
+          "reserved_bytes": 2942304256,
+          "scope": "PyTorch allocator: trainer ready through training completion (includes built-in val)"
+        }
+      }
+    },
+    "E2": {
+      "config": {
+        "model": "weights/pretrained/yolo26n.pt",
+        "data": "configs/bccd.yaml",
+        "epochs": 100,
+        "imgsz": 640,
+        "batch": 16,
+        "device": 0,
+        "seed": 42,
+        "deterministic": true,
+        "amp": true,
+        "patience": 20,
+        "cache": false,
+        "workers": 0,
+        "plots": true,
+        "save": true,
+        "optimizer": "auto",
+        "cls_pw": 0.5,
+        "project": "outputs/experiments",
+        "name": "e2_class_weight_640",
+        "exist_ok": false
+      },
+      "overall": {
+        "Precision": 0.8633895745984154,
+        "Recall": 0.8989843271167149,
+        "mAP50": 0.9127408232696731,
+        "mAP50-95": 0.6371433366071724
+      },
+      "per_class": {
+        "RBC": {
+          "precision": 0.7690076445870768,
+          "recall": 0.8574468085106383,
+          "map50": 0.8953378557916206,
+          "map50_95": 0.6362967077692026
+        },
+        "WBC": {
+          "precision": 0.9846140534109178,
+          "recall": 1.0,
+          "map50": 0.9878735632183907,
+          "map50_95": 0.8064054594431983
+        },
+        "Platelets": {
+          "precision": 0.8365470257972516,
+          "recall": 0.8395061728395061,
+          "map50": 0.8550110507990079,
+          "map50_95": 0.46872784260911615
+        }
+      },
+      "training": {
+        "actual_epochs": 69,
+        "best_epoch": 49,
+        "wall_seconds": 218.62918759999957,
+        "seconds_per_epoch_train_val_mean": 3.0851630840579936,
+        "peak_vram": {
+          "allocated_bytes": 2658590720,
+          "reserved_bytes": 2944401408,
+          "scope": "PyTorch allocator: trainer ready through training completion (includes built-in val)"
+        }
+      }
+    },
+    "E3": {
+      "config": {
+        "model": "weights/pretrained/yolo26n.pt",
+        "data": "configs/bccd.yaml",
+        "epochs": 100,
+        "imgsz": 512,
+        "batch": 16,
+        "device": 0,
+        "seed": 42,
+        "deterministic": true,
+        "amp": true,
+        "patience": 20,
+        "cache": false,
+        "workers": 0,
+        "plots": true,
+        "save": true,
+        "optimizer": "auto",
+        "cls_pw": 0.5,
+        "project": "outputs/experiments",
+        "name": "e3_class_weight_512",
+        "exist_ok": false,
+        "split": "val",
+        "val": true,
+        "resume": false
+      },
+      "overall": {
+        "Precision": 0.8638572038060769,
+        "Recall": 0.8731044776413946,
+        "mAP50": 0.9184876124368513,
+        "mAP50-95": 0.6354015448810103
+      },
+      "per_class": {
+        "RBC": {
+          "precision": 0.8664369466054629,
+          "recall": 0.7468085106382979,
+          "map50": 0.9011578558248488,
+          "map50_95": 0.6375930730795117
+        },
+        "WBC": {
+          "precision": 0.9864479907306493,
+          "recall": 1.0,
+          "map50": 0.9931609195402298,
+          "map50_95": 0.8078255881533807
+        },
+        "Platelets": {
+          "precision": 0.7386866740821183,
+          "recall": 0.872504922285886,
+          "map50": 0.8611440619454752,
+          "map50_95": 0.4607859734101384
+        }
+      },
+      "training": {
+        "actual_epochs": 60,
+        "best_epoch": 40,
+        "wall_seconds": 164.81240090000028,
+        "seconds_per_epoch_train_val_mean": 2.6517911866666055,
+        "peak_vram": {
+          "allocated_bytes": 1718715904,
+          "reserved_bytes": 1870659584,
+          "scope": "PyTorch allocator: trainer ready through training completion (includes built-in val)"
+        }
+      }
+    }
+  },
+  "selected_experiment": "E2"
+}

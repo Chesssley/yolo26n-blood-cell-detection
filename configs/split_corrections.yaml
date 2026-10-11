@@ -1,0 +1,10 @@
+version: corrected split v1
+description: corrected split v1 is derived from the upstream BCCD split with a minimal
+  group-aware correction for an identified cross-split near-duplicate pair.
+random_reshuffle: false
+test_policy: unchanged_from_upstream
+corrections:
+- image_id: BloodImage_00037
+  from: val
+  to: train
+  reason: Keep the reviewed acquisition group in training
